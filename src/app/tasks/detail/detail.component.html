@@ -1,0 +1,60 @@
+<div class="row mt-5">
+    <div class="col-6">
+      <h4>Task Details</h4>
+    </div>
+    <div class="col-6 text-right">
+        <label>Task Id: {{frm.id.value}}</label>
+    </div>
+  </div>
+<form [formGroup]="taskForm">
+    <div class="form-group">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Task:</label>
+      <input type="text" class="form-control" formControlName="task" id="pwd"  [ngClass]="{'is-invalid': frm.task.errors && isSubmit}">
+      <div *ngIf="frm.task.errors && isSubmit" class="invalid-feedback">
+        <span *ngIf="frm.task.errors.required && isSubmit">Task is required</span>
+    </div>
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <input type="text" class="form-control" formControlName="description" id="description"  [ngClass]="{'is-invalid': frm.description.errors && isSubmit}">
+        <div *ngIf="frm.description.errors && isSubmit" class="invalid-feedback">
+            <span *ngIf="frm.description.errors.required && isSubmit">Description is required</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="category">Category:</label>
+        <select class="form-control" formControlName="category"  [ngClass]="{'is-invalid': frm.category.errors && isSubmit}">
+            <option value="Development">Development</option>
+            <option value="Testing">Testing</option>
+        </select>
+        <div *ngIf="frm.category.errors && isSubmit" class="invalid-feedback">
+            <span *ngIf="frm.category.errors.required && isSubmit">Category is required</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="status">Status:</label>
+        <select class="form-control" formControlName="status"  [ngClass]="{'is-invalid': frm.status.errors && isSubmit}">
+            <option value="To Do">To Do</option>
+            <option value="Inprogress">Inprogress</option>
+            <option value="Done">Done</option>
+        </select>
+        <div *ngIf="frm.status.errors && isSubmit" class="invalid-feedback">
+            <span *ngIf="frm.status.errors.required && isSubmit">Status is required</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="priority">Priority:</label>
+        <select class="form-control" formControlName="priority" [ngClass]="{'is-invalid': frm.priority.errors && isSubmit}">
+            <option value="1">Low</option>
+            <option value="2">High</option>
+        </select>
+        <div *ngIf="frm.priority.errors && isSubmit" class="invalid-feedback">
+            <span *ngIf="frm.priority.errors.required && isSubmit">Priority is required</span>
+        </div>
+    </div>   
+    <button type="button" [routerLink]="['/tasks']" class="btn btn-secondary float-left">Back</button>
+    <button type="button" (click)="submit()" class="btn btn-success ml-2 float-right">Submit</button>
+    <button type="button" (click)="resetForm()" class="btn btn-danger float-right">Reset</button>
+  </form>

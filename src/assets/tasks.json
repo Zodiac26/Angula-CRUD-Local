@@ -1,0 +1,31 @@
+{
+	"data": [
+		{
+			"id": "T-1",
+			"task": "Angular task",
+			"description": "Angular Description",
+			"category": "Development",
+			"status": "To Do",
+			"priority": 1,
+			"isDelete":false
+		},
+		{
+			"id": "T-2",
+			"task": "Angular task",
+			"description": "Angular Description",
+			"category": "Development",
+			"status": "Inprogress",
+			"priority": 2,
+			"isDelete":false
+		},
+		{
+			"id": "T-3",
+			"task": "Angular task",
+			"description": "Angular Description",
+			"category": "Development",
+			"status": "Done",
+			"priority": 1,
+			"isDelete":false
+		}
+	]
+}
